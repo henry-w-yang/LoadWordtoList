@@ -1,12 +1,16 @@
 package com.exemple.customlistview;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Bundle;
 import android.text.Layout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -43,7 +47,8 @@ public class DiadanhApdater extends BaseAdapter {
         return 0;
     }
 private class ViewHoder{
-       TextView txtTen,txtID,txtNghia;
+       TextView txtTen,txtID,edd,ndd;
+
 }
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -65,12 +70,16 @@ private class ViewHoder{
         if (DDanh != null)
         {
             hoder.txtTen = convertView.findViewById(R.id.tendd);
-            hoder.txtNghia = convertView.findViewById(R.id.nghiadd);
+            hoder.edd = convertView.findViewById(R.id.edd);
             hoder.txtID = convertView.findViewById(R.id.iddd);
+            hoder.ndd = convertView.findViewById(R.id.ndd);
 
             hoder.txtID.setText(String.valueOf(DDanh.id));
             hoder.txtTen.setText(String.valueOf(DDanh.ten));
-            hoder.txtNghia.setText(String.valueOf(DDanh.nghia));
+            hoder.edd.setText(String.valueOf(DDanh.e));
+            hoder.ndd.setText(String.valueOf(DDanh.n));
+
+
 
         }
 
