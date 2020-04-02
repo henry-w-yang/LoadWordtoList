@@ -21,7 +21,7 @@ public class Search_Activity extends AppCompatActivity {
     ArrayList<anhviet> anhvietArrayList;
     public SQLiteDatabase database;
     public static String DATABASE_NAME = "anh_vietz.sqlite";
-    LichSuDatabase db;
+
 
     ImageButton imgSearch;
     EditText edtSearch;
@@ -60,7 +60,6 @@ public class Search_Activity extends AppCompatActivity {
                 String search = edtSearch.getText().toString().trim();
 
                 database = Database.initDatabase(Search_Activity.this, "anh_vietz.sqlite");
-                Log.e("Ten",search);
 
                 if (!search.equalsIgnoreCase("")) {
                     Cursor cursor = database.rawQuery("Select * from  anh_viet where anh like '%" + search + "%'", null);
@@ -74,11 +73,13 @@ public class Search_Activity extends AppCompatActivity {
                         Log.e("ten", cursor.getString(1));
                         arrayData.add(dd);
 
-//                        if (dd != null) {
-//                            db.themLichSu(dd);
-//                            Toast.makeText(Search_Activity.this, "Bạn Đã thêm thành công!", Toast.LENGTH_LONG).show();
-//                        }
-//                    }
+                        if (dd != null) {
+
+                            Log.e("anh",dd.getA());
+                            Log.e("viet",dd.getV());
+                            database.execSQL("INSERT TO lich_su(anh,viet) VALUES ('"+ dd.getA() +"','"+ dd.getV() +"')");
+                            Toast.makeText(Search_Activity.this, "Bạn Đã thêm thành công!", Toast.LENGTH_LONG).show();
+                        }
 
                     adapter = new ListAdapter(Search_Activity.this, R.layout.items, arrayData);
                     adapter.notifyDataSetChanged();

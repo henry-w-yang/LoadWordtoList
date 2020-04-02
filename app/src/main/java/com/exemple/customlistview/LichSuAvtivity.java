@@ -24,7 +24,7 @@ public class LichSuAvtivity extends AppCompatActivity {
         anhvietArrayList = new ArrayList<>();
         loadData();
         adapter = new ListAdapter(this,R.layout.items,anhvietArrayList);
-
+        lvLichsu.setAdapter(adapter);
 
 
     }
@@ -34,9 +34,10 @@ public class LichSuAvtivity extends AppCompatActivity {
         String anh,viet;
         anhviet av;
         database = Database.initDatabase(this, "anh_vietz.sqlite");
+//        Cursor cursor = database.rawQuery("SELECT * FROM  anh_viet",null);
         Cursor cursor = database.rawQuery("SELECT * FROM  lich_su",null);
-
-        while(cursor.moveToNext())
+        cursor.moveToLast();
+        while(cursor.moveToPrevious())
         {
             id = cursor.getInt(0);
             anh = cursor.getString(1);
