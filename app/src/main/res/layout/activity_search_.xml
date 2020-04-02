@@ -1,9 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/moew1"
     tools:context=".Search_Activity">
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:id="@+id/timkiem"
+        android:background="@drawable/background_search"
+        >
+        <EditText
+            android:layout_gravity="center"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="30dp"
+            android:hint="Tra Từ"
+            android:id="@+id/tvsearch"
+            android:textColor="#000"
+            />
+        <ImageButton
+            android:layout_gravity="right"
+            android:id="@+id/imgsearch"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_search_black_24dp"
+            />
+    </LinearLayout>
+    <ListView
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:paddingTop="20dp"
+        android:background="@drawable/background_search"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listview"
+        android:paddingBottom="20dp"
+        ></ListView>
+</LinearLayout>

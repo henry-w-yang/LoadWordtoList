@@ -4,13 +4,74 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/moew1"
+    android:orientation="vertical"
+
     tools:context=".MainActivity">
 
-   <ListView
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:id="@+id/listview"
-       ></ListView>
+<ImageView
+    android:layout_marginRight="20dp"
+    android:layout_marginLeft="20dp"
+    android:layout_gravity="top"
+    android:src="@drawable/title"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+   />
+   <LinearLayout
+       android:layout_gravity="center"
+       android:layout_marginTop="50dp"
+       android:layout_width="150dp"
+       android:layout_height="35dp"
+      android:orientation="horizontal"
+       android:layout_marginLeft="50dp"
+       android:layout_marginRight="50dp"
+       android:id="@+id/timkiem"
+       android:background="@drawable/background_search"
+      >
+      <TextView
+
+          android:layout_gravity="center"
+          android:layout_width="120dp"
+          android:layout_height="wrap_content"
+          android:paddingLeft="30dp"
+          android:text="Tra từ"
+          android:textColor="#000"
+          />
+      <ImageButton
+          android:layout_gravity="center"
+          android:id="@+id/imgsearch"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+         android:background="@drawable/ic_search_black_24dp"
+         />
+   </LinearLayout>
+   <LinearLayout
+       android:layout_gravity="center"
+       android:layout_marginTop="50dp"
+       android:layout_width="150dp"
+       android:layout_height="35dp"
+       android:orientation="horizontal"
+       android:layout_marginLeft="50dp"
+       android:layout_marginRight="50dp"
+       android:id="@+id/lichsu"
+       android:background="@drawable/background_search"
+       >
+      <TextView
+          android:layout_gravity="center"
+          android:layout_width="120dp"
+          android:layout_height="wrap_content"
+          android:paddingLeft="30dp"
+          android:text="Lịch sử"
+          android:textColor="#000"
+          />
+      <ImageButton
+          android:layout_gravity="center"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:background="@drawable/ic_youtube_searched_for_black_24dp"
+          />
+   </LinearLayout>
 
 
 </LinearLayout>

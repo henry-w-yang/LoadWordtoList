@@ -1,16 +1,19 @@
 package com.exemple.customlistview;
 
-public class diadanh {
-    public int id;
-    public String ten;
-    public double n;
-    public double e;
+public class anhviet {
+   int id;
+   String A;
+   String v;
 
-    public diadanh(int id, String ten, double n, double e) {
+    public anhviet(int id, String a, String v) {
         this.id = id;
-        this.ten = ten;
-        this.n = n;
-        this.e = e;
+        A = a;
+        this.v = v;
+    }
+
+    public anhviet(String a, String v) {
+        A = a;
+        this.v = v;
     }
 
     public int getId() {
@@ -21,27 +24,19 @@ public class diadanh {
         this.id = id;
     }
 
-    public String getTen() {
-        return ten;
+    public String getA() {
+        return A;
     }
 
-    public void setTen(String ten) {
-        this.ten = ten;
+    public void setA(String a) {
+        A = a;
     }
 
-    public double getN() {
-        return n;
+    public String getV() {
+        return v;
     }
 
-    public void setN(double n) {
-        this.n = n;
-    }
-
-    public double getE() {
-        return e;
-    }
-
-    public void setE(double e) {
-        this.e = e;
+    public void setV(String v) {
+        this.v = v;
     }
 }

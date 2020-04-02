@@ -18,23 +18,23 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class DiadanhApdater extends BaseAdapter {
+public class ListAdapter extends BaseAdapter {
 
    Context mycontext;
    int myLayout;
-   List<diadanh> diadanhList;
+   List<anhviet> anhvietList;
 
-   public DiadanhApdater(Context context, int layout, List<diadanh> diadanhs)
+   public ListAdapter(Context context, int layout, List<anhviet> anhviets)
     {
      mycontext = context;
      myLayout = layout;
-     diadanhList = diadanhs;
+     anhvietList = anhviets;
     }
 
 
     @Override
     public int getCount() {
-        return diadanhList.size();
+        return anhvietList.size();
     }
 
     @Override
@@ -47,7 +47,7 @@ public class DiadanhApdater extends BaseAdapter {
         return 0;
     }
 private class ViewHoder{
-       TextView txtTen,txtID,edd,ndd;
+       TextView anh,viet;
 
 }
     @Override
@@ -65,20 +65,15 @@ private class ViewHoder{
             hoder = (ViewHoder) convertView.getTag();
         }
 
-        diadanh DDanh = diadanhList.get(position);
+        anhviet av = anhvietList.get(position);
 
-        if (DDanh != null)
+        if (av != null)
         {
-            hoder.txtTen = convertView.findViewById(R.id.tendd);
-            hoder.edd = convertView.findViewById(R.id.edd);
-            hoder.txtID = convertView.findViewById(R.id.iddd);
-            hoder.ndd = convertView.findViewById(R.id.ndd);
+            hoder.anh = convertView.findViewById(R.id.tvAnh);
+            hoder.viet = convertView.findViewById(R.id.tvViet);
 
-            hoder.txtID.setText(String.valueOf(DDanh.id));
-            hoder.txtTen.setText(String.valueOf(DDanh.ten));
-            hoder.edd.setText(String.valueOf(DDanh.e));
-            hoder.ndd.setText(String.valueOf(DDanh.n));
-
+            hoder.anh.setText(String.valueOf(av.A));
+            hoder.viet.setText(String.valueOf(av.v));
 
 
         }
